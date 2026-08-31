@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#18392b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Torti">
+  <title>Torti — Mi tortuga</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header class="topbar">
+    <div>
+      <span class="eyebrow">MI TORTUGA</span>
+      <h1>Torti <span>🐢</span></h1>
+      <p>Hembra · Patas amarillas · casi 3 años</p>
+    </div>
+    <button class="avatar" id="photoBtn" aria-label="Cambiar foto de Torti">🐢</button>
+    <input id="photoInput" type="file" accept="image/*" hidden>
+  </header>
+
+  <main>
+    <section class="screen active" data-screen="inicio">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="pill">Hoy con Torti</span>
+          <h2 id="greeting">Todo listo para cuidarla 💛</h2>
+          <p id="heroSummary">Registra su primera medición para comenzar su historial.</p>
+        </div>
+        <div class="hero-photo" id="heroPhoto">🐢</div>
+      </div>
+
+      <div class="quick-grid">
+        <button class="quick" data-open="peso"><span>⚖️</span><b>Peso</b><small id="lastWeight">Pendiente</small></button>
+        <button class="quick" data-open="comida"><span>🥬</span><b>Comida</b><small id="lastFood">Sin registro</small></button>
+        <button class="quick" data-open="salud"><span>❤️</span><b>Salud</b><small id="lastHealth">Sin revisión</small></button>
+        <button class="quick" data-open="habitat"><span>🌡️</span><b>Hábitat</b><small id="lastHabitat">Por revisar</small></button>
+      </div>
+
+      <section class="panel">
+        <div class="panel-head"><h3>Checklist de hoy</h3><span id="checkProgress">0/4</span></div>
+        <label class="check"><input type="checkbox" data-check="agua"><span>Agua limpia disponible</span></label>
+        <label class="check"><input type="checkbox" data-check="apetito"><span>Observar apetito y actividad</span></label>
+        <label class="check"><input type="checkbox" data-check="ojos"><span>Revisar ojos, nariz y caparazón</span></label>
+        <label class="check"><input type="checkbox" data-check="habitat"><span>Comprobar temperatura y humedad</span></label>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h3>Últimos registros</h3><button class="text-btn" data-nav="historial">Ver todos</button></div>
+        <div id="recentList" class="timeline empty">Todavía no hay registros.</div>
+      </section>
+    </section>
+
+    <section class="screen" data-screen="registrar">
+      <div class="section-title"><span>Registro rápido</span><h2>¿Qué quieres guardar?</h2></div>
+      <div class="action-list">
+        <button data-open="peso">⚖️ <span><b>Peso y medidas</b><small>Peso, largo y ancho del caparazón</small></span><i>›</i></button>
+        <button data-open="comida">🥬 <span><b>Alimentación</b><small>Alimento, cantidad y apetito</small></span><i>›</i></button>
+        <button data-open="salud">❤️ <span><b>Salud</b><small>Actividad, ojos, nariz, heces y notas</small></span><i>›</i></button>
+        <button data-open="habitat">🌡️ <span><b>Hábitat</b><small>Temperatura, humedad, UVB y limpieza</small></span><i>›</i></button>
+        <button data-open="veterinario">🩺 <span><b>Veterinario</b><small>Consulta, tratamiento y próxima cita</small></span><i>›</i></button>
+        <button data-open="recuerdo">📸 <span><b>Recuerdo</b><small>Foto y momento especial</small></span><i>›</i></button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="historial">
+      <div class="section-title"><span>Evolución</span><h2>Historial de Torti</h2></div>
+      <div class="stats">
+        <div><small>Último peso</small><b id="statWeight">—</b></div>
+        <div><small>Registros</small><b id="statCount">0</b></div>
+        <div><small>Recuerdos</small><b id="statMemories">0</b></div>
+      </div>
+      <div class="filter-row" id="filters">
+        <button class="active" data-filter="all">Todo</button><button data-filter="peso">Peso</button><button data-filter="comida">Comida</button><button data-filter="salud">Salud</button><button data-filter="habitat">Hábitat</button>
+      </div>
+      <div id="historyList" class="timeline empty">Aún no hay información guardada.</div>
+    </section>
+
+    <section class="screen" data-screen="perfil">
+      <div class="profile-card">
+        <div class="profile-avatar" id="profilePhoto">🐢</div>
+        <h2>Torti</h2>
+        <p>Tu compañera de patas amarillas 💛</p>
+      </div>
+      <section class="panel details">
+        <div><span>Sexo</span><b>Hembra ♀</b></div>
+        <div><span>Especie probable</span><b>Chelonoidis denticulatus</b></div>
+        <div><span>Edad estimada</span><b>Casi 3 años</b></div>
+        <div><span>Fecha de nacimiento</span><b>Desconocida</b></div>
+      </section>
+      <section class="panel">
+        <h3>Datos y respaldo</h3>
+        <p class="muted">Los registros se guardan en este dispositivo.</p>
+        <div class="stack-actions"><button id="exportBtn" class="primary">Exportar respaldo</button><button id="importBtn">Importar respaldo</button><input type="file" id="importInput" accept="application/json" hidden><button id="clearBtn" class="danger">Borrar todos los datos</button></div>
+      </section>
+      <section class="notice"><b>Importante</b><p>Torti ayuda a organizar su cuidado, pero no reemplaza la evaluación de un veterinario de animales exóticos o reptiles.</p></section>
+    </section>
+  </main>
+
+  <nav class="tabbar" aria-label="Navegación principal">
+    <button class="active" data-nav="inicio"><span>⌂</span><small>Inicio</small></button>
+    <button data-nav="registrar"><span>＋</span><small>Registrar</small></button>
+    <button data-nav="historial"><span>▥</span><small>Historial</small></button>
+    <button data-nav="perfil"><span>♡</span><small>Torti</small></button>
+  </nav>
+</div>
+
+<dialog id="recordDialog">
+  <form method="dialog" id="recordForm">
+    <div class="dialog-head"><div><span class="eyebrow">NUEVO REGISTRO</span><h2 id="dialogTitle">Registro</h2></div><button type="button" class="close" id="closeDialog">×</button></div>
+    <div id="dynamicFields"></div>
+    <label>Fecha<input type="date" name="date" id="recordDate" required></label>
+    <label>Notas<textarea name="notes" rows="3" placeholder="Algo que quieras recordar..."></textarea></label>
+    <button class="primary full" type="submit">Guardar registro</button>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
