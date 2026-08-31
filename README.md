@@ -1,24 +1,36 @@
 # Torti — Mi tortuga 🐢💛
 
-PWA para llevar el historial de Torti: crecimiento, alimentación, salud, hábitat, veterinario y recuerdos.
+PWA de seguimiento de largo plazo para Torti.
 
-## V1
+## V4 · Super Update
 
-- Perfil de Torti (hembra, patas amarillas, edad aproximada)
-- Registro de peso y medidas del caparazón
-- Alimentación y apetito
-- Seguimiento básico de salud
-- Temperatura, humedad, UVB y limpieza del hábitat
-- Consultas veterinarias
-- Recuerdos
-- Checklist diario
-- Historial filtrable
-- Foto de perfil local
-- Respaldo e importación JSON
-- Soporte offline e instalación como PWA
+- Torti Score 0–100 de **seguimiento** (no diagnóstico médico)
+- Centro de cambios respecto a los registros recientes
+- Resumen diario de acciones pendientes
+- Curva de crecimiento combinada: peso + largo + ancho
+- Comparación por 30 días, 6 meses, 1 año o todo el historial
+- Caparazón Timeline con fotografías por ángulo y comparador deslizante antes ↔ ahora
+- Nutrición avanzada: calendario de 30 días, variedad, frecuencia, favoritos y repeticiones
+- Biblioteca orientativa para `Chelonoidis denticulatus` con recomendados, ocasionales, limitados y alimentos a evitar
+- Hábitat inteligente: temperatura, humedad, UVB, agua, sustrato y limpieza
+- Gráficas de temperatura y humedad
+- Rutinas automáticas con intervalos configurables
+- Control visual de salud
+- Registro de medicamentos y tratamientos
+- Modo veterinario con expediente imprimible / PDF
+- Pasaporte de Torti imprimible
+- Life Timeline con hitos, primer registro, pesos, aniversarios y cantidad de registros
+- Perfil editable
+- Respaldo completo JSON e importación
+- Conector de sincronización real preparado para Supabase
+- Soporte offline como PWA
 
-## Uso en iPhone
+## Sincronización en la nube
 
-Publica la rama `main` con GitHub Pages. Después abre la web en Safari, pulsa Compartir → Añadir a pantalla de inicio.
+La app no envía datos a terceros por defecto. En **Torti → Respaldo y nube** puedes configurar un proyecto Supabase y una tabla `torti_sync` con `sync_code` único para activar la sincronización. Sin credenciales, los datos continúan guardándose localmente y pueden respaldarse con JSON.
 
-> La aplicación organiza registros y observaciones. No sustituye una evaluación veterinaria profesional.
+## iPhone
+
+Publica `main` con GitHub Pages. Abre la app en Safari → Compartir → **Añadir a pantalla de inicio**.
+
+> Torti organiza datos y observaciones del cuidador. No diagnostica ni sustituye una evaluación veterinaria profesional.
