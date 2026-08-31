@@ -7,15 +7,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Torti">
-<title>Torti — Mi tortuga · V4.1</title>
-<link rel="manifest" href="manifest.webmanifest?v=4.1.0">
-<link rel="icon" href="icon.svg?v=4.1.0" type="image/svg+xml">
-<link rel="stylesheet" href="v4.css?v=4.1.0">
-<link rel="stylesheet" href="calendar-v4.css?v=4.1.0">
+<title>Torti — Mi tortuga · V4</title>
+<link rel="manifest" href="manifest.webmanifest?v=4.0.2">
+<link rel="icon" href="icon.svg?v=4.0.2" type="image/svg+xml">
+<link rel="stylesheet" href="v4.css?v=4.0.2">
 <style>html,body{margin:0;min-height:100%;background:#f5f2ea}#boot{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;min-height:100vh;display:grid;place-items:center;color:#173028;padding:24px;text-align:center}#boot div{max-width:360px}#boot b{display:block;font-size:28px;margin:10px 0}#boot small{color:#6f7b75;line-height:1.5}.boot-dot{font-size:46px}</style>
 </head>
 <body>
-<div id="boot"><div><div class="boot-dot">🐢</div><b>Cargando Torti V4.1</b><small>Preparando calendario y tus datos guardados…</small></div></div>
+<div id="boot"><div><div class="boot-dot">🐢</div><b>Cargando Torti V4</b><small>Recuperando la app y tus datos guardados…</small></div></div>
 <script>
 (async()=>{
   try{
@@ -26,14 +25,8 @@
     }
   }catch(e){}
   const s=document.createElement('script');
-  s.src='v4.js?v=4.1.0';
-  s.onload=()=>{
-    const c=document.createElement('script');
-    c.src='calendar-v4.js?v=4.1.0';
-    c.onload=()=>document.getElementById('boot')?.remove();
-    c.onerror=()=>document.getElementById('boot')?.remove();
-    document.body.appendChild(c);
-  };
+  s.src='v4.js?v=4.0.2';
+  s.onload=()=>document.getElementById('boot')?.remove();
   s.onerror=()=>{const b=document.getElementById('boot');if(b)b.innerHTML='<div><div class="boot-dot">🐢</div><b>No cargó la actualización</b><small>Recarga esta página una vez. Tus registros siguen guardados en el dispositivo.</small></div>'};
   document.body.appendChild(s);
 })();
