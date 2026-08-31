@@ -1,0 +1,11 @@
+{
+  "name":"Torti — Mi tortuga",
+  "short_name":"Torti",
+  "description":"Seguimiento de crecimiento, alimentación, salud y hábitat de Torti.",
+  "start_url":"./",
+  "scope":"./",
+  "display":"standalone",
+  "background_color":"#f5f3ed",
+  "theme_color":"#18392b",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
